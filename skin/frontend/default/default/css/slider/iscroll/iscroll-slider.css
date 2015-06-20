@@ -1,0 +1,102 @@
+ 
+/* The iScroll Slider styles */
+
+.viewport_class {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    margin: 0 auto;
+    background: #444;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow:0 0 3px;
+}
+
+.scroller {
+    height: 100%;
+    //position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+    background-color: #444;
+}
+
+.scroller ul{
+    height: 100%;
+    overflow: hidden;
+}
+#wrapper1 {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slide {
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+.painting {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow:
+        inset 2px 2px 6px rgba(255,255,255,0.6),
+        inset -2px -2px 6px rgba(0,0,0,0.6),
+        0 1px 8px rgba(0,0,0,0.8);
+}
+
+#indicator {
+    position: relative;
+    display: none;
+    height: 20px;
+    margin: 10px auto;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUBAMAAABohZD3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QUGCDYztyDUJgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAGFBMVEUAAADNzc3Nzc3Nzc3Nzc3Nzc3Nzc3///8aWwwLAAAABnRSTlMAX5Ks3/nRD0HIAAAAAWJLR0QHFmGI6wAAAFtJREFUGFdjYGBgEHYNMWRAAJE0IHCEc5nSwEABxleD8JOgXMY0KBCA8FlgfAcIXwzGT4TwzWD8ZAjfDcZPgfDDYPxU7Hx09ejmoduH7h5096L7B8O/6OGBGl4APYg8TQ0XAScAAAAASUVORK5CYII=);
+}
+
+#dotty {
+    position: absolute;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 10px;
+    background: #777;
+    padding-left: -5px;
+}
+
+.clear{
+    clear:both;
+}
+
+.iscroll-caption{
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 100;
+    line-height: 30px;
+}
+
+.slide span{
+    color: white;
+    padding-left: 10px;
+    font-size: 1em;
+}

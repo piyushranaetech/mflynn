@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>    
+         <reference name="head">
+               <action method="addJs"><script>slider/bxslider/jquery.bxslider.js</script><params><![CDATA[name="zjs_last"]]></params></action>
+          <action method="addJs"><script>slider/iscroll/iscroll.js</script><params><![CDATA[name="zjs_last"]]></params></action>
+           <action method="addJs"><script>slider/nivo/jquery.nivo.slider.js</script><params><![CDATA[name="zjs_last"]]></params></action>
+             
+	 </reference>	
+    </default>
+</layout>

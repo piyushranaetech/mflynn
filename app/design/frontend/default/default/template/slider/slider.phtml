@@ -1,0 +1,16 @@
+<?php
+
+$sliderData = $this->getSliderData();
+$slidesData = Mage::getModel('slider/slider')->getSlidesData($sliderData['id']);
+$getSlider = Mage::helper('slider')->getSelectedSlider();
+
+if ($getSlider == 'bxslider' && count($slidesData) > 1) {
+    echo $this->getChildHtml('bxslider_slider');
+} elseif ($getSlider == 'nivoslider' && count($slidesData) > 1) {
+    echo $this->getChildHtml('nivo_slider');
+} elseif ($getSlider == 'iscroll' && count($slidesData) > 1) {
+    echo $this->getChildHtml('iscroll_slider');
+} elseif(count($slidesData) == 1){
+    echo $this->getChildHtml('single_slider');
+}
+?>

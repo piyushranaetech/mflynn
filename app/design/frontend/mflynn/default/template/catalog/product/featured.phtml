@@ -1,0 +1,108 @@
+<div class="detail_button">
+    <button class="button">New Faviorites</button>                                               
+</div>  
+<div class="section">
+
+<?php $_helper = Mage::helper('catalog/category') ?>
+<?php $_categories = $_helper->getStoreCategories() ?>
+<?php $i = 1; ?>
+<?php if (count($_categories) > 0): ?>
+    <?php foreach ($_categories as $_category): ?>
+        <?php $id = $_category->getid() ?>
+        <?php
+        $category = new Mage_Catalog_Model_Category();
+        $category->load($id);
+        $collection = $category->getProductCollection();
+        $collection->addAttributeToSelect('*');
+        ?>
+        <?php foreach ($collection as $_product) {
+            ?>
+            <div class="product">
+                <?php $p_id = $_product->getid(); ?>
+                <a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(220); ?>"id ="product_image" class="product__image" alt="" ></a> 
+                <div class="productname"><?php echo $_product->getName(); ?></div>  
+                <div class="description">
+                    <?php echo $_product->getShortDescription(); ?>
+                </div>
+                <div class="price_">                                               
+                    <div class="product_price">
+                        <?php echo Mage::helper('core')->currency($_product->getPrice()); ?>                                               
+                    </div>                                                
+                </div>
+            </div>
+
+        <?php } ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+</div>
+<div class="middle">
+    <img src="<?php echo $this->getSkinUrl('images/middleimage.jpg') ?>">
+    <div class="middle_right_side">
+        <div class="visit_button">
+            <button class="button">VISIT US</button>                                               
+        </div>  
+        <div class="studio">
+     <p>Our Studio and shop os located at 40 Waltham Street, in the heart of Boston's historic South End</p>                                   
+        </div>  
+        <div class="timing">
+            <p>MONDAY / CLOSED</p>   
+            <p>TUESDAY - FRIDAT / 11-6</p>   
+            <p>SATURDAY/ 11-7</p> 
+            <p>SUNDAY/ 12-5</p>  
+            <p>OR BY SPECIAL APPOINTMENT</p>  
+        </div>
+    </div>
+</div>
+
+<div class="bottom">
+    <div class="bottom_image">
+        <div class="visit_button">
+            <button class="button">ABOUT US</button>                                               
+        </div> 
+ <img src="<?php echo $this->getSkinUrl('images/11.jpg') ?>">
+    </div>
+    <div class="bottom_image">
+        <div class="visit_button">
+            <button class="button">BLOG</button>                                               
+        </div>
+ <img src="<?php echo $this->getSkinUrl('images/12.jpg') ?>"> 
+    </div>
+    <div class="bottom_image">
+        <div class="visit_button">
+            <button class="button">PRESS</button>                                               
+        </div> 
+ <img src="<?php echo $this->getSkinUrl('images/13.jpg') ?>"> 
+    </div>
+    <div class="bottom_image">
+        <div class="visit_button">
+            <button class="button">INSTAGRAM</button>    
+ <img src="<?php echo $this->getSkinUrl('images/14.jpg') ?>">                                            
+        </div> 
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

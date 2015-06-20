@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <mycustom_tab module="slider" translate="label">
+            <label>Excellence</label>
+            <sort_order>1</sort_order>
+        </mycustom_tab>
+    </tabs>
+    <sections>
+        <testsection translate="label" module="slider">
+            <class>separator-top</class>
+            <label>Slider Settings</label>
+            <tab>mycustom_tab</tab>
+            <sort_order>130</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <caption translate="label">
+                    <label>Sliders</label>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <leftup translate="label">
+                            <label>Select Slider</label>
+                            <frontend_type>select</frontend_type>
+                            <comment><model>slider/adminhtml_config_comment</model></comment>
+                            <source_model>Excellence_Slider_Model_Attributes</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </leftup>
+                    </fields>
+                </caption>
+            </groups>
+        </testsection>
+    </sections>
+</config>

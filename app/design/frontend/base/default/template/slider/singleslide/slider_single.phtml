@@ -1,0 +1,29 @@
+<?php
+$sliderData = $this->getSliderData();
+$slidesData = Mage::getModel('slider/slider')->getSlidesData($sliderData['id']);
+?>
+
+<div <?php if ($slidesData): ?>class="single_slider"<?php endif; ?>>
+    <?php
+    foreach ($slidesData as $row):
+
+        $url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $row['filename'];
+        $var = $row['content'];
+        if (strpos($var, 'http://') !== 0 && strpos($var, 'https://') !== 0) {
+            $var = 'http://' . $var;
+        }
+
+                $slide_type = Mage::getSingleton('slider/slides')->getTypeArray();
+         
+                 if($row['filename']  && $slide_type[$row['slide_type']]=='File')
+                {
+                echo '<a href="' . $var . '"><img src="' . $url . '" alt=""  title="' . $row['title'] . '" /></a>';
+                }
+                
+                if($row['text_heading'] && $slide_type[$row['slide_type']]=='Text')
+                {
+                 echo '<a href="' . $var . '" style="margin:0px 50px "><p>'.$row['text_heading'].'</p></a>';
+                }
+    endforeach;
+    ?>
+</div>

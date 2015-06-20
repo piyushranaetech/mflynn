@@ -1,0 +1,114 @@
+<?php
+/**
+* Magento
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License (AFL 3.0)
+* that is bundled with this package in the file LICENSE_AFL.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/afl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@magentocommerce.com so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade Magento to newer
+* versions in the future. If you wish to customize Magento for your
+* needs please refer to http://www.magentocommerce.com for more information.
+*
+* @category    design
+* @package     rwd_default
+* @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+* @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+
+<div class="footer-container">
+<div class="footer">
+<?php echo $this->getChildHtml() ?>
+<address class="copyright"><?php echo $this->getCopyright() ?></address>
+
+
+
+
+
+
+</div>
+</div>
+
+*/
+?>
+<div class="footer-container">
+    <div class="footer">
+
+        <div class="footerinner">
+           
+                <p id="our"><b>OUR STORE</b></p>
+             <div id="address">   40 waltham street, Bostan, Mass. 02118 tel 617.123.4567 info@mflynnstudio.com</div>
+
+<div class="social">
+                <span class="social_img"><a href="http://www.rss.com" target="blank" ><img src="<?php echo 						$this->getSkinUrl('images/fb.jpg') ?>" id="fb"></a></span>
+                <span class="social_img"><a href="http://www.rss.com" target="blank">        <img src="<?php echo 						$this->getSkinUrl('images/p.jpg') ?>" ></a></span>
+                <span class="social_img"><a href="http://www.rss.com" target="blank">        <img src="<?php echo 						$this->getSkinUrl('images/squar.jpg') ?>" ></a></span>
+
+         </div>
+
+        </div>
+
+
+
+        <div class="footerinner">
+            
+                <p id="customer"><b>CUSTUMER SERVICES</b></p>
+                <p><a href="<?php echo Mage::getUrl('customer/account/login'); ?>">Jwelry Repair Policy</a></p>
+                <p><a href="<?php echo Mage::getUrl('catalogsearch/advanced/'); ?>">Ring Size Guide</a></p>
+                <p><a href="<?php echo Mage::getUrl('about-magento-demo-store'); ?>">Care Instruction</a></p>
+                <p><a href="<?php echo Mage::getUrl('about-magento-demo-store'); ?>">Shipping,Delevery & Returns</a></p>
+                <p><a href="<?php echo Mage::getUrl('about-magento-demo-store'); ?>">In-Store Purchase</a></p>
+                <p><a href="<?php echo Mage::getUrl('about-magento-demo-store'); ?>">Privacy Policy</a></p>
+
+
+
+        </div>
+
+
+
+
+        <div class="footerinner">
+            
+                <p id="our" ><b>OUR STORY</b></p>
+                <p id="OurStory">M. Flynn is a jewelry and accessories retail boutique and custom design studio located in Bosten's South End.</p>
+                <a href="">read more></a>
+
+        
+
+
+
+
+        </div>
+        <div class="footerinner">
+
+            
+
+     <?php 
+		echo $this->getChildHtml('footer_slider');
+     ?>
+             
+        </div>
+
+ 
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

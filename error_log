@@ -1,0 +1,2 @@
+[19-Jun-2015 07:25:00] PHP Parse error:  syntax error, unexpected '/' in /home4/etech/public_html/piyush/magento/app/design/frontend/mflynn/default/template/catalog/product/feat.phtml on line 16
+[19-Jun-2015 07:37:11] PHP Fatal error:  Call to a member function getid() on a non-object in /home4/etech/public_html/piyush/magento/app/design/frontend/mflynn/default/template/catalog/product/feat.phtml on line 17

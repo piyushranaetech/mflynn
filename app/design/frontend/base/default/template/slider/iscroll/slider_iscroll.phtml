@@ -1,0 +1,82 @@
+<script type="text/javascript">
+
+    var myScroll;
+
+    function loaded() {
+        myScroll = new IScroll('#wrapper1', {
+            scrollX: true,
+            scrollY: false,
+            momentum: false,
+            snap: 'li',
+            snapSpeed: 400,
+            keyBindings: true,
+            indicators: {
+                el: document.getElementById('indicator'),
+                resize: true
+            }
+        });
+    }
+
+    document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+    }, false);
+
+</script>
+<?php
+$sliderData = $this->getSliderData();               // Getting the specific slider id and position
+$slidesData = Mage::getModel('slider/slider')->getSlidesData($sliderData['id']);  // Getting the slides data related to that slider id
+?>
+<body onload="loaded()">
+    <div class="viewport_class" id="viewport<?php echo $sliderData['id'] ?>" style="visibility:hidden;">          <!-- Note that the visibility must be hidden -->
+        <div id="wrapper1">   <!-- must be a unique id for every slider  -->
+
+           
+
+            <div class="scroller" id="scroller<?php echo $sliderData['id'] ?>">
+                <ul <?php if ($slidesData): ?> class="nivoSliders slider<?php echo $sliderData['id'] ?>"<?php endif; ?>>
+                    <?php
+                    foreach ($slidesData as $row):
+
+                        $url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . $row['filename'];
+                        $var = $row['content'];
+                        if (strpos($var, 'http://') !== 0 && strpos($var, 'https://') !== 0) {
+                            $var = 'http://' . $var;
+                        }
+                 $slide_type = Mage::getSingleton('slider/slides')->getTypeArray();
+         
+                 if($row['filename']  && $slide_type[$row['slide_type']]=='File')
+                {
+                echo '<a href="' . $var . '"><img src="' . $url . '" alt=""  title="' . $row['title'] . '" /></a>';
+                }
+                
+                if($row['text_heading'] && $slide_type[$row['slide_type']]=='Text')
+                {
+                echo '<a href="' . $var . '"><img src="' . $url . '" alt=""  title="' . $row['title'] . '" /></a>';
+                }
+                    endforeach;
+                    ?>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cont">               <!-- These elements are very necessary for the iscroll slider to work properly. -->
+        <div id="indicator">
+            <div id="dotty"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        jQuery(document).ready(function() {
+            var imagelength = parseInt(jQuery('#viewport<?php echo $sliderData['id'] ?>').css('width'));
+            var element = parseInt(jQuery('.slider<?php echo $sliderData['id'] ?>  li').length);
+            var containerlength = imagelength * element;
+            slidewidth = 100 / element;
+            slidewidth = slidewidth + '%';
+            jQuery('#scroller<?php echo $sliderData['id'] ?>').css('width', containerlength);
+            jQuery('#scroller<?php echo $sliderData['id'] ?> .slide').css('width', slidewidth);
+            
+            jQuery(".viewport_class").css("visibility", "visible");
+        });
+    </script>
+</body>
