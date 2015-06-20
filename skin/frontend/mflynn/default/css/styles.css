@@ -9298,6 +9298,14 @@ padding-right: 16px;
 padding-left: 85px;
 
 }
+.countinue{padding-top: 47px;
+padding-bottom: 19px;}
+
+.product-details .product-name{text-align: left;
+margin-left: 61px;}
+
+
+
 .countinue a{color: #000000;
 text-decoration: none;
 height: 36px;
@@ -10180,9 +10188,9 @@ text-align: center;
 
 
 .slide_wrapper{position: relative;
-top: 126px;
+top: 118px;
 background: #d4e1d9;
-opacity: .85;}
+opacity: .85;  }
 
 .visit_button button{width:196px;}
 .detail_button button{width:196px;}

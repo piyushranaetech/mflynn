@@ -36,13 +36,13 @@
         <span class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(50, 50)->setWatermarkSize('30x10'); ?>" width="50" height="50" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /></span>
     <?php endif; ?>
     <div class="product-details">
-        <p class="product-name" style="float:left"><?php if ($this->hasProductUrl()): ?><a href="<?php echo $this->getProductUrl() ?>" style="position: relative;
+        <p class="product-name"><?php if ($this->hasProductUrl()): ?><a href="<?php echo $this->getProductUrl() ?>" style="position: relative;
 top: 10px;"><?php endif; ?><?php echo $this->escapeHtml($this->getProductName()) ?><?php if ($this->hasProductUrl()): ?></a><?php endif; ?></p>
 
-        <table class="info-wrapper" style="position: relative;top: 11px;right: 76px;">
+        <table class="info-wrapper">
             <tbody>
                 <tr>
-                    <th><?php echo $this->__('Price'); ?></th>
+                  <!--  <th><?php echo $this->__('Price'); ?></th>-->
                     <td>
                         <?php if ($canApplyMsrp): ?>
 

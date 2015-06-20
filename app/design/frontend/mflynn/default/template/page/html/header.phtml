@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Magento
@@ -40,7 +41,7 @@
 
         <?php echo $this->getChildHtml('currency_switcher') ?>
 
-        <p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></p>
+        <p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php  $this->getAdditionalHtml() ?></p>
     </div>
 </div>
 
@@ -116,13 +117,42 @@
             </div>
         </div> -->
     </div>
+
 </header>
 
 
 <?php echo $this->getChildHtml('topContainer'); ?>
+
+
+
 <script>
-    
-  
-    
-    
-    </script>
+
+
+jQuery(function( $ ){
+
+   $(window).scroll(function(){
+
+      var scrolled = $(window).scrollTop();
+     
+if(scrolled>=100){
+
+$(".welcome-msg").hide();
+$("#header").css("margin-top", "0");
+
+console.log(scrolled);}
+
+else{
+
+$(".welcome-msg").show();
+$("#header").css("margin-top", "37"+"px");
+
+
+}
+
+
+
+
+   });
+
+});
+</script>
