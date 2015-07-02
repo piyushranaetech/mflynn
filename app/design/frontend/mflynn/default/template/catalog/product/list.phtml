@@ -76,7 +76,7 @@
                 </div>
                 <div class="price_">                                               
                     <div class="product_price">
-                        <?php echo Mage::helper('core')->currency($_product->getPrice()); ?>                                               
+                      <?php echo number_format($_product->getPrice(), '1', '.', ',') ?>                                                      
                     </div>                                                
                 </div>
             </div>
